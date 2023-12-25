@@ -1,0 +1,17 @@
+name: Create Release on Pushed Tag
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get previous tag
+        id: prev_tag
+        run: echo "::set-output name=tag::$(git describe --abbrev=0 --tags HEAD~1)"
