@@ -1,6 +1,6 @@
 [project]
 name = "github-action-publish"
-version = "0.0.13"
+version = "0.0.14"
 description = "Test of a GitHub Actions workflow that publish a package on PyPI."
 authors = [
     {name = "Alexis Bergue"},
