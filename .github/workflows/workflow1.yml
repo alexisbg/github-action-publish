@@ -1,0 +1,17 @@
+name: Workflow1
+
+on:
+  workflow_dispatch:
+  # push:
+  #   tags:
+  #     - '*'
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print lines
+        run: echo ${{ env.GITHUB_TOKEN }}
