@@ -28,7 +28,7 @@ jobs:
         run: |
           {
             echo "lines<<EOF"
-            echo $(git --no-pager log --pretty=format:'- %s%n' ${{ steps.prev_tag.outputs.tag }}..HEAD~1)
+            echo "$(git --no-pager log --pretty=format:'- %s%n' ${{ steps.prev_tag.outputs.tag }}..HEAD~1)"
             echo EOF
           } >> $GITHUB_OUTPUT
 
@@ -39,7 +39,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           # 'tag' default value is github.ref and 'name' default value is 'tag' value
-          body: |
+          body:
             ### Changes since last release:
             ${{ steps.commit_titles.outputs.lines }}
 
