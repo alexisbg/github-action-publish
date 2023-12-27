@@ -37,7 +37,7 @@ jobs:
         with:
           # 'tag' default value is github.ref and 'name' default value is 'tag' value
           body: |
-            "### Changes since last release:"
+            ### Changes since last release:
             ${{ steps.commit_titles.outputs.lines }}
 
   call_publish:
