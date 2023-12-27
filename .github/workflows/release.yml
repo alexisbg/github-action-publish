@@ -40,5 +40,7 @@ jobs:
             "### Changes since last release:"
             ${{ steps.commit_titles.outputs.lines }}
 
-      - name: Call publish workflow
-        uses: ./.github/workflows/publish.yml
+  call_publish:
+    name: Call publish workflow
+    needs: release
+    uses: ./.github/workflows/publish.yml
