@@ -1,10 +1,9 @@
-name: Create Release on Pushed Tag
+name: Create Release
 
 on:
-  # workflow_dispatch:
   push:
-    tags:
-      - '*'
+    tags: ['*']
+  # workflow_dispatch:
 
 jobs:
   release:
