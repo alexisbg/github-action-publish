@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Print lines
-        run: echo ${{ env.GITHUB_TOKEN }}
+        run: echo ${{ github.ref }}
