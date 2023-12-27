@@ -19,9 +19,6 @@ jobs:
       # IMPORTANT: this permission is mandatory for trusted publisher
       id-token: write
     steps:
-      - name: Print event
-        run: echo ${{ github.event.workflow_run.event }}
-
       - name: Checkout code
         uses: actions/checkout@v4
 
