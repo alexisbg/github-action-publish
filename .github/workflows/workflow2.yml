@@ -6,8 +6,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: [Workflow1]
-    types:
-      - completed
+    types: [completed]
 
 jobs:
   job2:
@@ -22,5 +21,6 @@ jobs:
       - name: Print info
         run: |
           echo "Conclusion=${{ github.event.workflow_run.conclusion }}"
+          echo "Event=${{ github.event.workflow_run.event }}"
           echo "Release=${{ github.event.release }}"
           echo "Workflow=${{ github.event.workflow }}"
