@@ -28,9 +28,9 @@ jobs:
         run: |
           {
             echo "LINES<<EOF"
-            echo $(git --no-pager log --pretty=format:'- %s\\n' ${{ steps.prev_tag.outputs.tag }}..HEAD~1)
+            echo $(git --no-pager log --pretty=format:'- %s' ${{ steps.prev_tag.outputs.tag }}..HEAD~1)
             echo EOF
           } >> $GITHUB_ENV
 
       - name: Print lines
-        run: echo -e ${{ env.LINES }}
+        run: printf ${{ env.LINES }}
