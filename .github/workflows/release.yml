@@ -36,7 +36,9 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           # 'tag' default value is github.ref and 'name' default value is 'tag' value
-          body:
+          body: |
             "### Changes since last release:"
             ${{ steps.commit_titles.outputs.lines }}
 
+      - name: Call publish workflow
+        uses: ./.github/workflows/publish.yml
