@@ -12,7 +12,12 @@ on:
 jobs:
   job2:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow || github.event.release }}"
+    if: >
+      ${{
+        github.event.workflow_run.conclusion == 'success' ||
+        github.event.workflow ||
+        github.event.release
+      }}"
     steps:
       - name: Print info
         run: |
