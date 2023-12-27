@@ -43,4 +43,7 @@ jobs:
   call_publish:
     name: Call publish workflow
     needs: release
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publisher
+      id-token: write
     uses: ./.github/workflows/publish.yml
