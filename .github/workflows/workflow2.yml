@@ -1,6 +1,7 @@
 name: Workflow2
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: [Workflow1]
     types:
@@ -11,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print workflow_run.conclusion
-        run: echo "Conclusion=${{ github.event.workflow_run.conclusion == 'success' }}"
+        run: echo "Conclusion=${{ github.event.workflow_run.conclusion }}"
