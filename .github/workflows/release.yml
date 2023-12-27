@@ -33,10 +33,11 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Create Release
+        env:
+          # Using a PAT allows triggering another action
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
         uses: ncipollo/release-action@v1
         with:
-          # Using a PAT allows triggering another action
-          token: ${{ secrets.WORKFLOW_PAT }}
           # 'tag' default value is github.ref and 'name' default value is 'tag' value
           body: |
             ### Changes since last release:
