@@ -1,10 +1,9 @@
 name: Workflow1
 
 on:
-  workflow_dispatch:
   # push:
-  #   tags:
-  #     - '*'
+  #   tags: ['*']
+  workflow_dispatch:
 
 jobs:
   job1:
@@ -13,5 +12,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print lines
+      - name: Print info
         run: echo ${{ github.ref }}
