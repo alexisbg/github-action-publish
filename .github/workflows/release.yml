@@ -32,7 +32,7 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1.13.0
         with:
           # 'tag' default value is github.ref and 'name' default value is 'tag' value
           body: |
