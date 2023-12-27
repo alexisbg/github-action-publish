@@ -1,6 +1,8 @@
 name: Workflow2
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
   workflow_run:
     workflows: [Workflow1]
@@ -11,5 +13,8 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Print workflow_run.conclusion
-        run: echo "Conclusion=${{ github.event.workflow_run.conclusion }}"
+      - name: Print info
+        run: |
+          echo "Conclusion=${{ github.event.workflow_run.conclusion }}"
+          echo "Release=${{ github.event.release }}"
+          echo "Workflow=${{ github.event.workflow }}"
