@@ -1,8 +1,8 @@
 name: Workflow1
 
 on:
-  # push:
-  #   tags: ['*']
+  push:
+    tags: ['*']
   workflow_dispatch:
 
 jobs:
