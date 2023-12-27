@@ -33,4 +33,4 @@ jobs:
           } >> $GITHUB_ENV
 
       - name: Print lines
-        run: printf ${{ env.LINES }}
+        run: printf "%q" "${{ env.LINES }}"
